@@ -1,0 +1,87 @@
+/*
+Hello!!! I tried doing the extra credeit making the head a bit bigger and smaller, but couldnt figure it out, oh well
+*/
+
+var headX = 200;
+var headY = 200;
+var headDirection = 4;
+var headSize = 100;
+var headCount = 0;
+
+
+var bodyX = 150;
+var bodyY = 290;
+var bodyDirection = 10;
+
+var size = 27;
+var count = 0;
+var sizeDirection = 100;
+
+function setup() {
+  createCanvas(400, 400);
+}
+
+function draw() {
+  background(111);
+  console.log("hi");
+
+ fill(285, 294, 190);
+    circle(headX,headY,175);
+    headY+=headDirection;
+    if(headY >= 318 || headY <= 82)
+    {
+        headDirection *= -1;
+    }
+
+
+   strokeWeight(5);
+
+  fill(0);
+   point(150,175);
+   point(240,175);
+
+   ellipse(200, 250, 100, 59)
+  
+  //glasses
+   line(130, 200, 130, 160);
+  line(175, 160, 130, 160);
+  line(175, 200, 175, 160);
+  line(130, 200, 175, 200);
+  
+  line(220, 160, 175, 160);
+  
+  line(220, 160, 220, 200);
+  line(220, 160, 260, 160);
+  line(260, 200, 260, 160);
+  line(260, 200, 220, 200);
+  
+  
+  //nose
+  
+    triangle(190,200,195,190,200,200)
+  
+    // body
+  
+   fill(46, 55, 180);
+    rect(bodyX,bodyY,100,130);
+    bodyX += bodyDirection;
+    if(bodyX <= 0 || bodyX >= 325 )
+    {
+        bodyDirection *= -1;
+    }
+ 
+  
+  fill(0);
+    textSize(size);
+    size+= sizeDirection;
+    count++;
+    if(count > 5)
+    {
+        sizeDirection *=-1;
+        count = 0;
+    }
+    text("Anthony Spencer",100,370 );
+  
+
+    
+}
